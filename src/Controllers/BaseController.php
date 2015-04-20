@@ -7,7 +7,8 @@ use Controllers\BaseControllers;
 
 class BaseController
 {
-    public function __construct(){
-		var_dump('base');
-	}
+    public function __construct()
+    {
+		//var_dump('base');
+    }
 }

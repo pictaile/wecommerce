@@ -3,10 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <title>wecommerce</title>
-<link type="text/css" rel="stylesheet" href="style/bancomat.css" />
+<script  src="{{ app.request.basepath }}web/js/jquery-1.11.1.min.js"></script>
 <script  src="{{ app.request.basepath }}web/js/wecommerce.js"></script>
 <script>
-    console.log(wecommerce.init());
+   var opt = {
+       shop:'Магазин Одежды'
+   } 
+   wecommerce.init(opt);
 </script>
 </head>
 <body>

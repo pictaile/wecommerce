@@ -5,13 +5,48 @@
  */
 
 var wecommerce = (function (window, undefined) {
-
-  return {
-      init: function(data){
-            console.log(1);
-         }
+    var url = 'http://goods-action/';
+    var send = function(options)
+    {    
+        console.log(options)
+      $.ajax({
+            url: url,
+            type: "POST",
+            dataType: 'json',
+            data:options,
+            success: success,
+            error:determination_error
+          }); 
+    };
+    
+    var success = function(response)
+    {
+        console.log(response)
+    }
+    
+    var determination_error = function(error)
+    {
+        console.log(error)
+    }
+    
+    var methods = 
+    {
+        init : function( options ) {
+          send(options)
+        },
+        show : function( ) {
+           alert(2)
+        },
+        hide : function( ) {
+           alert(3)
+        },
+        update : function( content ) {
+            alert(4)
+        }
     };
 
-})(); 
+  return methods;
+
+})(window); 
 
 

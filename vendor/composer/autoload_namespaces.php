@@ -17,4 +17,5 @@ return array(
     'Pimple' => array($vendorDir . '/pimple/pimple/lib'),
     'Models' => array($baseDir . '/src'),
     'Controllers' => array($baseDir . '/src'),
+    'Layers\\'=> array($baseDir . '/src'),
 );
