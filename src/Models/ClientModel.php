@@ -5,9 +5,13 @@ use Symfony\Component\HttpFoundation\Response;
 use \Layers\Banners\CustomBanner;
 class ClientModel
 {
-    public function __construct(/*Request */$request) 
-    {
-        $a = new \Layers\Banners\CustomBanner();
-        var_dump($a->createBanner());die;
-    }    
+    private $banner;
+    public function __construct(Request $request){
+        $this->banner = new \Layers\Banners\CustomBanner();
+    }  
+    
+    public function getResponse(){
+        return $this->banner->createBanner();
+    }
+    
 }

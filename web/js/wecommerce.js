@@ -6,33 +6,37 @@
 
 var wecommerce = (function (window, undefined) {
     var url = 'http://goods-action/';
-    var send = function(options)
+    var opt;
+    var send = function()
     {    
-        console.log(options)
       $.ajax({
             url: url,
             type: "POST",
             dataType: 'json',
-            data:options,
+            data:opt,
             success: success,
             error:determination_error
           }); 
     };
     
-    var success = function(response)
-    {
-        console.log(response)
+    var success = function(response) {
+        createBanner(response);
+        
     }
     
-    var determination_error = function(error)
-    {
+    var determination_error = function(error) {
         console.log(error)
     }
     
-    var methods = 
-    {
+    var createBanner = function(response){
+        console.log($('#'+opt.forBanner))
+        $('#'+opt.idBanner).html(response.html)
+    }
+    
+    var methods = {
         init : function( options ) {
-          send(options)
+          opt = options;
+          send();
         },
         show : function( ) {
            alert(2)

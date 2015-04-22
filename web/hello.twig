@@ -7,12 +7,15 @@
 <script  src="{{ app.request.basepath }}web/js/wecommerce.js"></script>
 <script>
    var opt = {
-       shop:'Магазин Одежды'
+       idshop:'111',
+       shop:'Магазин Одежды',
+       idBanner:'forBanner'
    } 
-   wecommerce.init(opt);
+  
 </script>
 </head>
 <body>
-    wecommerce
+    <a href="#" onclick=" wecommerce.init(opt);">Получить скидочный купон в ресторан</a>
+    <div id="forBanner"></div>
 </body>
 </html>
